@@ -3,7 +3,7 @@
 ## Description <br/>
 .Net Core Api 8.0 sürümünü kullandığım bu projemde mimari tasarım paradigması olarak Onion Architecture üzerine kurlmuştur. İçerisinde CQRS, Mediator ve Repository gibi Design Patterns'ler
 kullanılmış olup bunun yanında uygulama içerisinde Jwt ile güvenlik ve konfigürasyonları sağlanan ve Admin Routune sahip olan user Dashboard kısmındaki fonksiyonları kullanabilektedir.
-Server'e request edip gelen responsedeki ıp adresi ile ulaşım sağlayan user ise seçimli menü ile bulunduğu lokasyonda aktif olan Araçlardan herhangi birisini kiralayabilmektedir,
+Server'e request edip gelen responsedeki ıp adresi ile AnaSayfa'ya ulaşım sağlayan user ise seçimli menü ile bulunduğu lokasyonda aktif olan Araçlardan herhangi birisini kiralayabilmektedir,
 admine mesaj gönderebilir veya blog sayfasından son güncellemeleri takip edip yorum yapabilir.
 
 ## Tecnologies <br/>
