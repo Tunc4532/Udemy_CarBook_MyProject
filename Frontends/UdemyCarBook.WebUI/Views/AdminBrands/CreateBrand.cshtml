@@ -1,0 +1,32 @@
+﻿@model CreateBrandDto
+@{
+    ViewData["Title"] = "CreateBrand";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Araba Modeli Ekleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">
+                            Arabalar ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir veri girişinden sonra
+                            kaydet butonuna basarak verileri kaydedebilirsiniz.
+                        </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputModel">Model</label>
+                                <input type="text" asp-for="name" class="form-control" id="exampleInputModel" placeholder="Araç Marka bilgisi giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

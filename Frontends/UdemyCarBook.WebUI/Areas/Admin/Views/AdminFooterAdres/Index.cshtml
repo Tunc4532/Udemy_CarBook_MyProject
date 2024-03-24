@@ -1,0 +1,51 @@
+﻿@model List<ResultFooterAdressDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Alt İletişim Alanı</h4>
+                        <p class="card-subtitle mb-4">
+                            Anasayfa Mesaj İiletişim sayfasında bulunan şirkete ait iletişim bilgileri aşağıda bulunmaktadır.
+                            Tema bütünlüğü için sadece 1 tane veri olabilir istediğiniz gibi güncelleyebilirainiz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Adres </th>
+                                        <th>Telefon </th>
+                                        <th>Mail </th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Adress</td>
+                                            <td>@item.Phone</td>
+                                            <td>@item.Email</td>
+                                            <td><a href="/Admin/AdminFooterAdres/UpdateFooterAdres/@item.FooterAdreID" class="btn btn-warning">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

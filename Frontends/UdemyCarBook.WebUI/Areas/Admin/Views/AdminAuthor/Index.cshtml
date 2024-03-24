@@ -1,0 +1,54 @@
+﻿@model List<ResultAuthorDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yazar Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Yazarlar Alanı ile ilgili silme, güncelleme, listeleme ve arama işlemlerini
+                            bu sayfa üzerinden yapabilirsiniz
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>İsim</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Name</td>
+                                            <td>@item.ImageUrl</td>
+                                            <td><a href="/Admin/AdminAuthor/RemoveAuthor/@item.AuthorID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminAuthor/UpdateAuthor/@item.AuthorID" class="btn btn-warning">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminAuthor/CreateAuthor/" class="btn btn-info">Yeni Yazar Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

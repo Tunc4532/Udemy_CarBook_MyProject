@@ -1,0 +1,52 @@
+﻿@model List<ResultBrandDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Araba Marka Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Araba Markaları ile ilgili silme, güncelleme, listeleme ve arama işlemlerini
+                            bu sayfa üzerinden yapabilirsiniz
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Marka</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.name</td>
+                                            <td><a href="/AdminBrands/RemoveBrand/@item.brandID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/AdminBrands/UpdateBrand/@item.brandID" class="btn btn-warning">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/AdminBrands/CreateBrand/" class="btn btn-info">Yeni Araç Marka Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

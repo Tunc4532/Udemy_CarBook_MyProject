@@ -1,0 +1,35 @@
+﻿@model UpdateFeatureDto
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Araç Özellik Güncelleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">
+                            Arabalar ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir veri girişinden sonra
+                            Güncelle butonuna basarak verileri Güncelleyebilirsiniz.
+                        </p>
+                        <form method="post">
+                            <input type="hidden" asp-for="FeatureID" />
+                            <div class="form-group">
+                                <label for="exampleInputModel">Model</label>
+                                <input type="text" asp-for="Name" class="form-control" id="exampleInputModel" placeholder="Araç Özellik bilgisi giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

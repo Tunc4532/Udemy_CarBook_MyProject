@@ -1,0 +1,31 @@
+﻿@model CreateLocationDto
+@{
+    ViewData["Title"] = "CreateLocation";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Lokasyon Ekleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">
+                            Yeni Lokasyon ekleme işlemini aşagıdan yapabilirsiniz, veri girişi yaparen eksiksiz veri girişine dikkat ediniz.
+                        </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName">Lokasyon</label>
+                                <input type="text" asp-for="Name" class="form-control" id="exampleInputName" placeholder="Lokasyon Bilgisini Giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

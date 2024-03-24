@@ -1,0 +1,43 @@
+﻿@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 1;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Gelen Mesajlar</h4>
+                        <p class="card-subtitle mb-4">
+                           Kullanıcıların anasayfadaki iletişim sayfası üzerinden göndermiş oldukları mesajlar aşağıdadır.
+
+                        </p>
+                        <a href="#" class="btn btn-dark waves-effect waves-light">Yeni Mesaj Gönder</a>
+                        <br /><br />
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <h5 class="card-header">@item.Name - @count</h5>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Mesaj Konusu: @item.Subjact</h4>
+                                        <h6 class="card-title">Gönderilen Tarih: @item.SendDate.ToLongDateString()</h6>
+                                        <a href="#" class="btn btn-info">Mesajı Görüntüle</a>
+                                        <a href="#" class="btn btn-danger">Kaldır</a>
+                                    </div>
+                                </div>
+                            </div>
+                            count++;
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

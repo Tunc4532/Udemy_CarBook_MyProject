@@ -1,0 +1,40 @@
+﻿@model UpdateSocialMediaDto
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"> Sosyal Medya Hesabı Güncelleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">
+                            Yeni Sosyal Medya Hesabı ekleme işlemini aşagıdan yapabilirsiniz, veri girişi yaparen eksiksiz veri girişine dikkat ediniz.
+                        </p>
+                        <form method="post">
+                            <input type="hidden" asp-for="SocialMediaID" />
+                            <div class="form-group">
+                                <label for="exampleInputName">Platform Adı</label>
+                                <input type="text" asp-for="Name" class="form-control" id="exampleInputName" placeholder="Platform Adı Bilgisi Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUrl">Platform Url</label>
+                                <input type="text" asp-for="Url" class="form-control" id="exampleInputUrl" placeholder="Platform Url Bilgisi Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputIcon">Icon Url</label>
+                                <input type="text" asp-for="Icon" class="form-control" id="exampleInputIcon" placeholder="Icon Url Bilgisi Giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

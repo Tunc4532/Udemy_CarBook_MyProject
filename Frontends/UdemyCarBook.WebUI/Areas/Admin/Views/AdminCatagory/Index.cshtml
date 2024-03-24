@@ -1,0 +1,53 @@
+﻿@model List<ResultCatagoryDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Katagori Alanı</h4>
+                        <p class="card-subtitle mb-4">
+                            Katagori Alanı ile ilgili silme, güncelleme, listeleme ve arama işlemlerini
+                            bu sayfa üzerinden yapabilirsiniz
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Katagori Adı</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                        <th>Katagoriye Ait Bilgiler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Name</td>
+                                            <td><a href="/Admin/AdminCatagory/RemoveCatagory/@item.CatagoryID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/AdminCatagory/UpdateCatagory/@item.CatagoryID" class="btn btn-warning">Güncelle</a></td>
+                                            <td><a href="#" class="btn btn-dark">Katagoriye Ait Bilgiler</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminCatagory/CreateCatagory/" class="btn btn-info">Yeni Katagori Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

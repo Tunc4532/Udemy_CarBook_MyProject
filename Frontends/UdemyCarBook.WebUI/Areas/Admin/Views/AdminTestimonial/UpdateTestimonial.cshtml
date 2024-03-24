@@ -1,0 +1,44 @@
+﻿@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Referans Güncelleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">
+                             Referans Güncelleme işlemini aşagıdan yapabilirsiniz, veri girişi yaparen eksiksiz veri girişine dikkat ediniz.
+                        </p>
+                        <form method="post">
+                            <input type="hidden" asp-for="TestimonialID" />
+                            <div class="form-group">
+                                <label for="exampleInputName">Ad Soyad</label>
+                                <input type="text" asp-for="Name" class="form-control" id="exampleInputName" placeholder="Ad Soyad Bilgisi Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName">Meslek</label>
+                                <input type="text" asp-for="Tittle" class="form-control" id="exampleInputName" placeholder="Meslek Bilgisi Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName">Açıklama</label>
+                                <input type="text" asp-for="Comment" class="form-control" id="exampleInputName" placeholder="Açıklama Bilgisi Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputName">Image Url</label>
+                                <input type="text" asp-for="ImageUrl" class="form-control" id="exampleInputName" placeholder="Image Url Bilgisi Giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Güncelle</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model CreateBannerDto
+@{
+    ViewData["Title"] = "CreateBanner";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Banner Ekleme Sayfası</h4>
+                        <p class="card-subtitle mb-4">
+                            banner alanına veri girişi yaparken bir öceki veriyi silmeyi unutmayınız aksi takdirde ikili veri girişinde 
+                            tema bütünlüğü bozulur.
+                        </p>
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputTittlel">Başlık</label>
+                                <input type="text" asp-for="Tittle" class="form-control" id="exampleInputTittlel" placeholder="Başlık Bilgisi Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDescription">Açıklama</label>
+                                <input type="text" asp-for="Description" class="form-control" id="exampleInputDescription" placeholder="Sayfa Açıklamasını Giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputVideoDescription">Video Açıklama</label>
+                                <input type="text" asp-for="VideoDescription" class="form-control" id="exampleInputVideoDescription" placeholder="Video Açıklamasını giriniz">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputVideoUrl">Video Url</label>
+                                <input type="text" asp-for="VideoUrl" class="form-control" id="exampleInputVideoUrl" placeholder="Video UrL bilgisi giriniz">
+                            </div>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

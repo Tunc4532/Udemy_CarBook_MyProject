@@ -1,0 +1,41 @@
+﻿@model List<ResultPricingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 1;
+}
+<div class="page-content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Kiralama seçenekleri</h4>
+                        <p class="card-subtitle mb-4">
+                           verilen araba ilanlarında fiyatlar aşağıdaki belirlediğiniz kriterlere göre fiyatlandırılmaktadır.
+                           aşağıdaki butonlardan silme, güncelleme ve yeni gün seçeneği ekleyebilirsizniz.
+                        </p>
+                        <a href="/Admin/AdminPricing/CreatePricing/" class="btn btn-dark waves-effect waves-light">Yeni Seçenek Ekle</a>
+                        <br /><br />
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <h5 class="card-header">Kiralama Seçeneği - @count</h5>
+                                    <div class="card-body">
+                                        <h4 class="card-title">@item.Name</h4>
+                                        <a href="/Admin/AdminPricing/RemovePricing/@item.PricingID" class="btn btn-primary waves-effect waves-light">Kaldır</a>
+                                        <a href="/Admin/AdminPricing/UpdatePricing/@item.PricingID" class="btn btn-warning">Güncelle</a>
+                                    </div>
+                                </div>
+                            </div>
+                            count++;
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

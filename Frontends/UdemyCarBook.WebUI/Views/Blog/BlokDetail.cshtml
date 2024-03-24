@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "BlokDetail";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+<section class="ftco-section ftco-degree-bg">
+    <div class="container">
+        <div class="row">
+
+            @* alttaki awaite bağlı iç içe component yapılanması mevcut *@
+            @await Component.InvokeAsync("_BlogDetailsMainComponentPartial", new { id = ViewBag.blogid })
+
+            <div class="col-md-4 sidebar ftco-animate">
+
+                @await Component.InvokeAsync("_BlokDetailSidebarSearchBoxComponentPartial")
+
+                @await Component.InvokeAsync("_BlokDetailsCatagoryComponentPartial")
+
+                @await Component.InvokeAsync("_BlokDetailsRecentBlogaComponentPartial")
+
+                @await Component.InvokeAsync("_BlogDetailsTagCloudComponentPartial", new { id = ViewBag.blogid })
+
+                @await Component.InvokeAsync("_BlogDetailsParagraphComponentPartial")
+
+            </div>
+
+        </div>
+    </div>
+</section>

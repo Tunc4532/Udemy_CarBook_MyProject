@@ -1,0 +1,20 @@
+﻿@model List<ResultCommentDto>
+
+
+<ul class="comment-list">
+    @foreach (var item in Model)
+    {
+        <li class="comment">
+            <div class="vcard bio">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL3Hl5FXWpEFo9p7GTrCTz2jKeSpMPXQJ7JQ&usqp=CAU" alt="Image placeholder">
+            </div>
+            <div class="comment-body">
+                <h3>@item.Name</h3>
+                <div class="meta">@item.CreatedDate.ToLongDateString()</div>
+                <p>
+                   @item.Description
+                </p>
+            </div>
+        </li>
+    }
+</ul>
